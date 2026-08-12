@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -558,7 +557,7 @@ footer p { margin: 0; font-size: 9px; font-weight: 800; letter-spacing: .18em; t
 
   // Colle seulement l'identifiant de la vidéo YouTube non répertoriée ici.
   // Exemple : https://youtu.be/ABC123xyz devient "ABC123xyz".
-  const YOUTUBE_VIDEO_ID = "";
+  const YOUTUBE_VIDEO_ID = "Oxs6hIUjBCE";
   const STORAGE_KEY = "legacy-pre-call-reflection-v1";
   const fields = [...document.querySelectorAll("[data-answer]")];
   const count = document.getElementById("completed-count");
@@ -572,6 +571,7 @@ footer p { margin: 0; font-size: 9px; font-weight: 800; letter-spacing: .18em; t
     iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(YOUTUBE_VIDEO_ID)}?rel=0&modestbranding=1`;
     iframe.title = "Message de Max avant l’appel Legacy Protocol";
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.allowFullscreen = true;
     frame.replaceChildren(iframe);
   }
